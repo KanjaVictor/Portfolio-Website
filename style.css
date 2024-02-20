@@ -1,0 +1,103 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+/*------------------------------Header------------------------------*/
+
+/*-----This handles the image container and list-----*/
+.navbar {
+    display: flex;
+    /*Fits the flex items(image & list) in one line*/
+    height: 70px;
+    line-height: 70px;
+    background-color: #102542;
+
+}
+
+/*-----Handles the image container-----*/
+.logo-image a,
+span {
+    display: flex;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    margin: 0px 5px;
+}
+
+.logo-image img {
+    width: 50px;
+    height: 50px;
+    margin: 10px 10px;
+}
+
+/*-----Handles the list container-----*/
+.menu {
+    width: 100%;
+}
+
+/*Used to stylize the list*/
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    /*Places the list items into the line, wraps for reponsiveness and places them at the end of the screen.*/
+}
+
+.navbar li {
+    display: flex;
+    padding: 0px 10px;
+}
+
+/*Style the links*/
+.navbar li a {
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.1rem;
+    width: 100px;
+}
+
+/*Instead of (li a) I've used li only so that the entire list item when hovered on changes color*/
+.navbar li:hover {
+    background: linear-gradient(#102542, #A491D3);
+}
+
+/*------------------------------Landing Page------------------------------*/
+.banner-image img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.banner-image img:hover {
+    opacity: 1;
+}
+
+.banner-text {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    color: #FFFFFF;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+
+/*------------------------------Footer------------------------------*/
+.footer {
+    background-color: #102542;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0px;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    margin-top: 20px;
+}
