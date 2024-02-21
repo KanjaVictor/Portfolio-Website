@@ -92,12 +92,83 @@ ul {
 
 /*------------------------------Footer------------------------------*/
 .footer {
-    background-color: #102542;
-    color: #FFFFFF;
-    text-align: center;
     padding: 10px 0px;
     position: relative;
     bottom: 0px;
     width: 100%;
     margin-top: 20px;
+}
+
+.wrapper {
+    background-color: #102542;
+    color: #FFFFFF;
+    padding-top: 10px;
+}
+
+.foo-email {
+    grid-area: fe;
+}
+
+.foo-logo {
+    grid-area: fl;
+}
+
+.foo-social {
+    grid-area: fs;
+
+}
+
+.foo-text {
+    grid-area: ft;
+    background-color: #FFFFFF;
+}
+
+.foo-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: minmax(100px, auto);
+    grid-template-areas:
+        "fe fe fl"
+        "fs fs fs"
+        "ft ft ft";
+}
+
+/*Customizing the footer further*/
+.form-field {
+    background-color: #102542;
+    border: 0px;
+    border-bottom: 2px solid #FFFFFF;
+    outline: 0px;
+    box-shadow: none;
+    width: 100%;
+    font-size: 1em;
+}
+
+.form-label {
+    position: relative;
+    top: 0px;
+}
+
+.foo-logo img {
+    height: 100px;
+    margin: 10px 10px;
+    text-decoration: none;
+}
+
+.foo-logo img a {
+    text-decoration: none;
+}
+
+.foo-social img {
+    height: 30px;
+    width: 30px;
+    margin: 0px 10px;
+}
+
+.foo-text span {
+    display: grid;
+    color: #102542;
+    text-align: center;
+    bottom: 0px;
+    font-size: 1.1em;
 }
