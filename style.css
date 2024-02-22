@@ -6,6 +6,15 @@
 
 }
 
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
 /*------------------------------Header------------------------------*/
 
 /*-----This handles the image container and list-----*/
@@ -22,8 +31,6 @@
 .logo-image a,
 span {
     display: flex;
-    text-decoration: none;
-    color: #FFFFFF;
     font-size: 1.5rem;
     margin: 0px 5px;
 }
@@ -40,8 +47,7 @@ span {
 }
 
 /*Used to stylize the list*/
-ul {
-    list-style-type: none;
+.menu ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -56,8 +62,6 @@ ul {
 /*Style the links*/
 .navbar li a {
     text-align: center;
-    color: #FFFFFF;
-    text-decoration: none;
     font-size: 1.1rem;
     width: 100px;
 }
@@ -89,38 +93,107 @@ ul {
     text-align: center;
 }
 
+/*------------------------------About Me------------------------------*/
+.abt-title {
+    grid-area: at;
+    margin: 10px;
+    font-size: 2rem;
+    color: #102542;
+}
+
+.abt-profile {
+    grid-area: ap;
+    display: flex;
+    justify-content: center;
+}
+
+.abt-name {
+    grid-area: an;
+    background-color: #102542;
+    color: #FFFFFF;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    margin: 10px;
+}
+
+.abt-desc {
+    grid-area: ad;
+    background-color: #A491D3;
+    color: #102542;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    margin: 10px;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "at at at"
+        "ap an an"
+        "ad ad ad";
+    background-color: #A491D3;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.abt-profile img {
+    height: auto;
+    width: 300px;
+    border-radius: 50%;
+}
 
 /*------------------------------Footer------------------------------*/
 .footer {
-    padding: 10px 0px;
     position: relative;
     bottom: 0px;
     width: 100%;
     margin-top: 20px;
+    padding-top: 10px;
 }
 
 .wrapper {
     background-color: #102542;
     color: #FFFFFF;
     padding-top: 10px;
+    border-radius: 10px;
+    margin: 5px;
 }
 
+/*Creating grid layout for the footer*/
 .foo-email {
     grid-area: fe;
+    height: 50px;
+    margin: 10px;
 }
 
 .foo-logo {
     grid-area: fl;
 }
 
+.foo-links {
+    grid-area: fls;
+    border-right: 1px solid #FFFFFF;
+}
+
+.foo-call {
+    grid-area: fc;
+    border-right: 1px solid #FFFFFF;
+}
+
 .foo-social {
     grid-area: fs;
-
 }
 
 .foo-text {
     grid-area: ft;
     background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
 }
 
 .foo-footer {
@@ -129,46 +202,93 @@ ul {
     grid-template-rows: minmax(100px, auto);
     grid-template-areas:
         "fe fe fl"
-        "fs fs fs"
+        "fls fc fs"
         "ft ft ft";
 }
 
-/*Customizing the footer further*/
+/*-----Customizing the footer-----*/
+
+/*---Email section---*/
 .form-field {
+    /*Input*/
     background-color: #102542;
+    color: #FFFFFF;
     border: 0px;
     border-bottom: 2px solid #FFFFFF;
     outline: 0px;
     box-shadow: none;
     width: 100%;
+    margin-top: 10px;
     font-size: 1em;
 }
 
 .form-label {
+    /*Label*/
     position: relative;
     top: 0px;
 }
 
+.form-control {
+    display: flex;
+}
+
+.btn-submit {
+    background-color: #A491D3;
+    color: #FFFFFF;
+    border: 0px;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #FE5F55;
+    color: #FFFFFF;
+}
+
+/*---Logo section---*/
 .foo-logo img {
     height: 100px;
     margin: 10px 10px;
-    text-decoration: none;
 }
 
-.foo-logo img a {
-    text-decoration: none;
+/*Links section*/
+.foo-links ul {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.foo-links li a:hover {
+    color: #FE5F55;
+}
+
+/*Call section*/
+.foo-call span {
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/*---Socials section*/
+.foo-social span {
+    font-size: 1.5rem;
 }
 
 .foo-social img {
     height: 30px;
     width: 30px;
     margin: 0px 10px;
+    align-items: center;
 }
 
+/*---Copyright section*/
 .foo-text span {
     display: grid;
     color: #102542;
     text-align: center;
     bottom: 0px;
-    font-size: 1.1em;
+    font-size: 1rem;
 }
