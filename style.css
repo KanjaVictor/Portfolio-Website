@@ -88,7 +88,7 @@ span {
     .navbar-links ul {
         display: flex;
         flex-direction: column;
-        position: fixed;
+        position: absolute;
         width: 100%;
         background: #102542;
         top: 70px;
