@@ -21,10 +21,11 @@ a {
 .navbar {
     display: flex;
     /*Fits the flex items(image & list) in one line*/
+    justify-content: space-between;
+    /*Places the logo on one end and links on the other end*/
     height: 70px;
     line-height: 70px;
     background-color: #102542;
-
 }
 
 /*-----Handles the image container-----*/
@@ -42,33 +43,78 @@ span {
 }
 
 /*-----Handles the list container-----*/
-.menu {
-    width: 100%;
-}
+.navbar-links {}
 
 /*Used to stylize the list*/
-.menu ul {
+.navbar-links ul {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    visibility: visible;
     /*Places the list items into the line, wraps for reponsiveness and places them at the end of the screen.*/
 }
 
-.navbar li {
-    display: flex;
+.navbar-links li {
     padding: 0px 10px;
 }
 
 /*Style the links*/
-.navbar li a {
+.navbar-links li a {
+    display: block;
+    width: 100px;
     text-align: center;
     font-size: 1.1rem;
-    width: 100px;
 }
 
 /*Instead of (li a) I've used li only so that the entire list item when hovered on changes color*/
-.navbar li:hover {
+.navbar-links li:hover {
     background: linear-gradient(#102542, #A491D3);
+}
+
+/*---Making the navbar reponsive for smaller screens---*/
+
+/*Making the input and bar invisible for larger screens*/
+#check {
+    display: none;
+}
+
+.checkbtn img {
+    width: 30px;
+    height: 70px;
+    display: none;
+}
+
+@media (max-width: 670px) {
+
+    /*Setting the navlinks*/
+    .navbar-links ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        background: #102542;
+        top: 70px;
+        left: 0;
+        visibility: visible;
+        align-items: center;
+        transition: all 0.5s;
+    }
+
+    .navbar-links ul li a {
+        font-size: 20px;
+    }
+
+    /*Making the bar visible*/
+    .checkbtn img {
+        width: 30px;
+        height: 70px;
+        display: block;
+        margin: 0px 10px;
+    }
+
+    /*When bar is clicked; checkbox will be checked and links hidden*/
+    #check:checked~.navbar-links ul {
+        visibility: hidden;
+        transition: all 0.5s;
+    }
 }
 
 /*------------------------------Landing Page------------------------------*/
@@ -76,13 +122,14 @@ span {
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    opacity: 0.9;
+    opacity: 1;
+    /*0.9*/
 }
 
-.banner-image img:hover {
+/* .banner-image img:hover {
     opacity: 1;
 }
-
+ */
 .banner-text {
     position: absolute;
     left: 50%;
@@ -129,42 +176,6 @@ span {
     margin: 10px;
 }
 
-@media (min-width: 200px) {
-    #about {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "at"
-            "ap"
-            "an"
-            "ad";
-    }
-
-    @media(min-width: 650px) {
-        #about {
-            grid-template-columns: 1fr 1fr;
-            grid-template-areas:
-                "at at"
-                "ap an"
-                "ad ad";
-        }
-    }
-
-    @media(min-width: 1000px) {
-        #about {
-            grid-template-columns: repeat(3, 1fr);
-            grid-area:
-                "at at at"
-                "ap an an"
-                "ad ad ad";
-        }
-    }
-
-    /*  about div {
-        display: flex;
-        justify-content: space-between;
-    } */
-}
-
 .about {
     display: grid;
     background-color: #A491D3;
@@ -176,6 +187,28 @@ span {
     height: auto;
     width: 300px;
     border-radius: 50%;
+}
+
+/*Making the about page responsive for different screen sizes with media query*/
+@media (min-width: 100px) {
+    #about {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "at"
+            "ap"
+            "an"
+            "ad";
+    }
+}
+
+@media(min-width: 900px) {
+    #about {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "at at"
+            "ap an"
+            "ad ad";
+    }
 }
 
 /*------------------------------Footer------------------------------*/
